@@ -19,6 +19,7 @@ build: dirs $(TARGET)
 build: CFLAGS += -O2
 build: $(TARGET)
 
+debug: dirs $(TARGET)
 debug: CFLAGS += -O0 -g -DDEBUG
 debug: $(TARGET)
 
