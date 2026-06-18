@@ -1,8 +1,8 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Iinclude
-LDFLAGS = 
+CFLAGS = -Wall -Wextra 
+LDFLAGS = -Llib -Iinclude -lraylib -lm -ldl -lpthread -lGL -lrt -lX11
 
-SRCDIR = src
+SRCDIR = .
 BUILDDIR = build
 BINDIR = $(BUILDDIR)/bin
 LIBDIR = $(BUILDDIR)/lib
