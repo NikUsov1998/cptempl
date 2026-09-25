@@ -28,6 +28,7 @@ dirs:
 	mkdir -p $(DIRS)
 $(TARGET): $(OBJECTS) | $(BINDIR)
 	$(CC) $^ -o $@ $(LDFLAGS)
+	strip -s $@
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.c | $(BUILDDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
