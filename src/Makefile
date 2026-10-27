@@ -18,15 +18,13 @@ POST_BUILD =
 .PHONY: build debug clean
 
 build: dirs $(TARGET)
-build: CFLAGS += -O2
-build: POST_BUILD = strip -s $(TARGET)
-build: $(TARGET) 
-
+build: CFLAGS += -O3 -flto
+build: POST_BUILD += strip -s $(TARGET)
+build: $(TARGET)
 
 debug: dirs $(TARGET)
 debug: CFLAGS += -O0 -g3 -ggdb -DDEBUG
 debug: $(TARGET)
-
 dirs:
 	@echo "mkdir -p $(DIRS)"
 	mkdir -p $(DIRS)
